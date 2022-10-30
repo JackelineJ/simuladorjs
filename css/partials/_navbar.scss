@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap');
+.nav{
+    max-width: 400px;
+    border: 2px solid $borderColor;
+    border-radius: 1rem;
+    margin: 1rem;
+    li {
+        padding: 1rem;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover {
+            background-color: $backgroundColor;
+            border-radius: 1rem;
+        }
+        a{
+            color: $textColor;
+            font-family: 'Quantico', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+        }
+    }
+}
