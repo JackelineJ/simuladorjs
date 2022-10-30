@@ -5,16 +5,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Juego interactivo">
+    <meta name="keywords" content="juego interactivo, juego de rol, fantasmas">
+    <!------icono de la pestaña---->
+    <!----bootstrap de ser necesario---->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Ghosting</title>
 </head>
 
 <body>
+    <header>
+        <div class="head">
+            <a href="#">
+                <img src="./assets/menuimg/ghost.png" alt="ghost">
+            </a>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="index.html">Title</a></li>
+                <li><a href="./pages/game.html">New game</a></li>
+                <li><a href="./pages/gallery.html">Gallery</a></li>
+                <li><a href="./pages/shop.html">Shop</a></li>
+                <li><a href="./pages/credits.html">Credits</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="indexQuestion" id="trigger">
+            <h1>Wait...Is that a ghost?!</h1>
+        </div>
+        <section class="animation">
+            <img class="menu" src="./assets/indeximg/cielo.png" id="sky">
+            <img class="menu" src="./assets/indeximg/bosque.png" id="woods">
+            <img class="menu" src="./assets/indeximg/casa.png" id="house">
+            <img class="menu" src="./assets/indeximg/cerca.png" id="fence">
+            <img class="menu" src="./assets/indeximg/personajes.png" id="characters">
+            <img class="menu" src="./assets/indeximg/titulo.png" id="title">
+        </section>
+    </main>
+    <footer>
+        <span>&copy; 2022 by me</span>
+    </footer>
 
-
-
-
-
-    <!---codigo javascript---->
+    <!---link de bootstrap java de ser necesario---->
+    <!---codigos javascript---->
     <script src="index.js"></script>
 </body>
 
