@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Crimson Text", serif;
+}
+
+img {
+  width: 100%;
+}
+
+.nav {
+  max-width: 400px;
+  border: 2px solid #CE84DB;
+  border-radius: 1rem;
+  margin: 1rem;
+}
+.nav li {
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.nav li:hover {
+  background-color: #4BD663;
+  border-radius: 1rem;
+}
+.nav li a {
+  color: #FFFFFF;
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+body {
+  background-image: linear-gradient(to bottom right, #4BD663, #FA9BDB, #FAF64B);
+  font-family: "Quantico", sans-serif;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body header .head {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  padding-top: 5rem;
+  /*borrar si no funciona*/
+}
+body header .head img {
+  margin: auto;
+  width: 7rem;
+}
+body header .head #trigger {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body main {
+  padding: 5rem;
+  /*borrar si no funciona*/
+}
+body main .indexQuestion {
+  color: #FFFFFF;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+body main .animation {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+body main .animation .menu {
+  position: absolute;
+  border-radius: 1rem;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+body main .animation .menu #sky {
+  bottom: 0;
+  top: initial;
+}
+body main .animation .menu #woods {
+  bottom: 0;
+  top: initial;
+  z-index: 1000;
+}
+body footer {
+  display: flex;
+  flex-direction: end;
+  text-align: center;
+  justify-content: center;
+}
+body footer span {
+  padding: 2rem;
+}/*# sourceMappingURL=styles.css.map */
