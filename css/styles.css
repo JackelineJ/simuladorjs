@@ -12,7 +12,7 @@ ul {
 
 a {
   text-decoration: none;
-  font-family: "Crimson Text", serif;
+  font-family: "Quantico", sans-serif;
 }
 
 img {
@@ -106,4 +106,98 @@ body footer {
 }
 body footer span {
   padding: 2rem;
+}
+
+.gallery {
+  max-width: 1200px;
+  display: grid;
+  grid-template-areas: "titleGal titleGal" "img1 img2";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 1fr;
+  gap: 1rem;
+  background-color: #FFFFFF;
+  border-radius: 1rem;
+}
+.gallery .titleGal {
+  grid-area: titleGal;
+  text-align: center;
+  color: #020202;
+}
+.gallery .img1 {
+  grid-area: img1;
+  border-radius: 1rem;
+}
+.gallery .img2 {
+  grid-area: img2;
+  border-radius: 1rem;
+}
+
+.headerNotIndex {
+  display: grid;
+  grid-area: "titleShop navNotIndex navNotIndex";
+}
+.headerNotIndex .titleShop {
+  grid-area: titleShop;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.headerNotIndex .navNotIndex {
+  grid-area: navNotIndex;
+  display: flex;
+}
+
+.shopContainer {
+  max-width: 1200px;
+  background-color: #FFFFFF;
+  border-radius: 2rem;
+  display: grid;
+  grid-template-areas: "mainTitle mainTitle" "box 1 box2";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 7rem 1fr;
+}
+.shopContainer .mainTitle {
+  grid-area: mainTitle;
+  grid-column: 1/3;
+  grid-row: 1/2;
+  font-size: 5rem;
+  text-align: center;
+  color: #020202;
+}
+.shopContainer .box .box1 {
+  grid-area: box1;
+}
+.shopContainer .box .box1 .gameArtbook {
+  width: 50%;
+}
+.shopContainer .box .box2 {
+  grid-area: box2;
+}
+.shopContainer .box .box2 .ghostingGame {
+  width: 50%;
+}
+.shopContainer .box h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.shopContainer .box .price {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.shopContainer .box .button {
+  display: flex;
+  justify-content: center;
+}
+.shopContainer .box .button .shoppingButton {
+  font-family: "Quantico", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #FFFFFF;
+  background-color: #4BD663;
+  border: 1px solid #4BD663;
+  width: 10rem;
+  height: 3rem;
+  border-radius: 1rem;
 }/*# sourceMappingURL=styles.css.map */
