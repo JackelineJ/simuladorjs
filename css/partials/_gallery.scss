@@ -1,0 +1,25 @@
+.gallery {
+    max-width: 1200px;
+    display: grid;
+    grid-template-areas:
+    "titleGal titleGal"
+    "img1 img2";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 1fr;
+    gap: 1rem;
+    background-color: $textColor;
+    border-radius: 1rem;
+    .titleGal {
+        grid-area: titleGal;
+        text-align: center;
+        color: $multiuseColor;
+    }
+    .img1 {
+        grid-area: img1;
+        border-radius: 1rem;
+    }
+    .img2 {
+        grid-area: img2;
+        border-radius: 1rem;
+    }
+}
