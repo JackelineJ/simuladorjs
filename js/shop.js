@@ -1,3 +1,5 @@
+/* Simulador de carrito de compras para comprar mercancías del juego o el juego*/
+
 let products = parseInt(
     prompt("Type the number of the product you want to buy: 1.Ghosting (Full version) - 2.Ghosting Artbook - 3.Ghosting Bundle (Full game + Artbook)")
 );
@@ -27,16 +29,18 @@ while(keepBuying === true) {
         buyTotal = buyTotal + bundlePack.price;
     } else {
         products = parseInt(
-            prompt("The option you typed is not available. Please choose an available option: 1.Ghosting (Full version) 2 - Ghosting Artbook 3. Ghosting Bundle (Full game + Artbook")
-        );
-        continue;
+            prompt("The option you typed is not available. Please choose an available option: 1.Ghosting (Full version) 2 - Ghosting Artbook 3. Ghosting Bundle (Full game + Artbook"));
+            continue;
     }
 
     wantTo = parseInt(prompt("Do you want to keep buying? (Enter a number) 1.Yes - 2.No"));
     if(wantTo === 1) {
         products = parseInt(prompt("Type the number of the product you want to buy: 1.Ghosting (Full version) - 2.Ghosting Artbook - 3.Ghosting Bundle (Full game + Artbook)"));
+    } else if (wantTo === 2) {
+        keepBuying = false;
     } else {
-    keepBuying = false;
+        wantTo = alert("Invalid option.");
+        continue;
     } 
 }
 alert("The total amount is " + buyTotal);
