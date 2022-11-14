@@ -1,3 +1,32 @@
+.headerNotIndex {
+    display: grid;
+    grid-template-areas:
+    "pageIcon navNotIndex";
+    grid-template-columns: 600px 1fr;
+    grid-template-rows: 1fr;
+    .pageIcon{
+        grid-area: pageIcon;
+        .ghostIcon {
+            border-radius: 1rem;
+            width: 50%;
+        }
+    }
+    .navNotIndex {
+        grid-area: navNotIndex;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        li {
+            display: inline;
+            padding: 2rem;
+            font-size: 1.2rem;
+        }
+        a {
+            color: $textColor;
+        }
+    }
+}
+
 .gallery {
     max-width: 1200px;
     display: grid;
@@ -12,14 +41,18 @@
     .titleGal {
         grid-area: titleGal;
         text-align: center;
+        font-size: 2rem;
+        padding: 1rem;
         color: $multiuseColor;
     }
     .img1 {
         grid-area: img1;
-        border-radius: 1rem;
+        border-radius: 2rem;
+        padding-left: 1rem;
     }
     .img2 {
         grid-area: img2;
-        border-radius: 1rem;
+        border-radius: 2rem;
+        padding: 0 1rem 1rem 0;
     }
 }
