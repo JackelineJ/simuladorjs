@@ -1,0 +1,61 @@
+.shopContainer {
+    max-width: 1200px;
+    background-color: $textColor;
+    border-radius: 2rem;
+    display: grid;
+    grid-template-areas:
+    "mainTitle mainTitle"
+    "box 1 box2";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 7rem 1fr;
+    .mainTitle {
+        grid-area: mainTitle;
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+        font-size: 4rem;
+        padding-top: 2rem;
+        text-align: center;
+        color: $multiuseColor;
+    }
+    .box {
+        .box1{
+            grid-area: box1;
+            .gameArtbook{
+                width: 50%;
+            }
+        }
+        
+        .box2{
+            grid-area: box2;
+            .ghostingGame {
+                width: 50%;
+            }
+        }
+        h2{
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .price {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .button {
+            display: flex;
+            justify-content: center;
+            .shoppingButton {
+                font-family: 'Quantico', sans-serif;
+                font-size: 1.5rem;
+                text-align: center;
+                margin-bottom: 2rem;
+                color: $textColor;
+                background-color: $backgroundColor;
+                border: 1px solid $backgroundColor;
+                width: 10rem;
+                height: 3rem;
+                border-radius: 1rem;
+                cursor: pointer;
+            }
+        }
+    }
+}

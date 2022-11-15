@@ -8,6 +8,8 @@ let keepBuying = true;
 let buyTotal = 0;
 let wantTo;
 
+const productsArray = [];
+
 class Product{
     constructor(id,name,price){
     this.id = id
@@ -17,21 +19,16 @@ class Product{
 }
 
 const ghosting = new Product(1, "ghosting", 30);
+productsArray.push(ghosting);
 const artbook = new Product(2, "artbook", 27);
+productsArray.push(artbook);
 const bundlePack = new Product(3, "bundle", 51);
+productsArray.push(bundlePack);
+
+console.log(productsArray);
 
 while(keepBuying === true) {
-    if (products === ghosting.id) {
-        buyTotal = buyTotal + ghosting.price;
-    } else if (products === artbook.id) {
-        buyTotal = buyTotal + artbook.price;
-    } else if (products === bundlePack.id) {
-        buyTotal = buyTotal + bundlePack.price;
-    } else {
-        products = parseInt(
-            prompt("The option you typed is not available. Please choose an available option: 1.Ghosting (Full version) 2 - Ghosting Artbook 3. Ghosting Bundle (Full game + Artbook"));
-            continue;
-    }
+    buyTotal = buyTotal + productsArray[products-1].price;
 
     wantTo = parseInt(prompt("Do you want to keep buying? (Enter a number) 1.Yes - 2.No"));
     if(wantTo === 1) {
@@ -45,3 +42,15 @@ while(keepBuying === true) {
 }
 alert("The total amount is " + buyTotal);
 console.log(buyTotal);
+
+function belowFifty (sales) {
+    return sales.price < 51;
+}
+
+console.log(productsArray.filter(belowFifty));
+
+function bundleFind (pack) {
+    return pack.name === "bundle";
+}
+
+console.log(productsArray.find(bundleFind));

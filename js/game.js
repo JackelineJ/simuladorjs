@@ -39,8 +39,18 @@ while (decisionMaking === true) {
 } 
 continuePlaying = alert("You start walking ahead");
 
+const Protagonist = {
+    age: 25,
+    birthday: "August 13th"
+};
 
+function dataHero () {
+    console.log("Hello, I'm " + heroName + ". I have " + this.age + " years of experience in this thing called living.");
+    console.log("My birthday is " + this.birthday);
+};
 
+Protagonist.dataHero = dataHero;
+Protagonist.dataHero ();
 
 
 
