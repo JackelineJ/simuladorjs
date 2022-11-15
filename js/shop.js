@@ -42,3 +42,15 @@ while(keepBuying === true) {
 }
 alert("The total amount is " + buyTotal);
 console.log(buyTotal);
+
+function belowFifty (sales) {
+    return sales.price < 51;
+}
+
+console.log(productsArray.filter(belowFifty));
+
+function bundleFind (pack) {
+    return pack.name === "bundle";
+}
+
+console.log(productsArray.find(bundleFind));
