@@ -38,7 +38,7 @@ img {
 .nav li a {
   color: #FFFFFF;
   font-family: "Quantico", sans-serif;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 3rem;
 }
 
@@ -212,13 +212,19 @@ body footer span {
   font-size: 1.5rem;
   text-align: center;
   margin-bottom: 2rem;
-  color: #FFFFFF;
+  color: #020202;
   background-color: #4BD663;
   border: 1px solid #4BD663;
   width: 10rem;
   height: 3rem;
   border-radius: 1rem;
   cursor: pointer;
+}
+.shopContainer .box .button .shoppingButton:hover {
+  color: #FFFFFF;
+  background-color: #CE84DB;
+  border: 1px solid #CE84DB;
+  transition: 0.5s;
 }
 
 .creditContainer {
