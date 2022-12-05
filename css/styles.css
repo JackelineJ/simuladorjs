@@ -164,50 +164,22 @@ body footer span {
   padding: 0 1rem 1rem 0;
 }
 
-.shopContainer {
+.container {
   max-width: 1200px;
   background-color: #FFFFFF;
   border-radius: 2rem;
-  display: grid;
-  grid-template-areas: "mainTitle mainTitle" "box 1 box2";
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 7rem 1fr;
 }
-.shopContainer .mainTitle {
-  grid-area: mainTitle;
-  grid-column: 1/3;
-  grid-row: 1/2;
+.container .mainTitle {
   font-size: 4rem;
   padding-top: 2rem;
   text-align: center;
   color: #020202;
 }
-.shopContainer .box .box1 {
-  grid-area: box1;
-}
-.shopContainer .box .box1 .gameArtbook {
-  width: 50%;
-}
-.shopContainer .box .box2 {
-  grid-area: box2;
-}
-.shopContainer .box .box2 .ghostingGame {
-  width: 50%;
-}
-.shopContainer .box h2 {
+.container h2 {
   text-align: center;
   margin-bottom: 1rem;
 }
-.shopContainer .box .price {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-.shopContainer .box .button {
-  display: flex;
-  justify-content: center;
-}
-.shopContainer .box .button .shoppingButton {
+.container .shoppingButton {
   font-family: "Quantico", sans-serif;
   font-size: 1.5rem;
   text-align: center;
@@ -220,7 +192,7 @@ body footer span {
   border-radius: 1rem;
   cursor: pointer;
 }
-.shopContainer .box .button .shoppingButton:hover {
+.container .shoppingButton:hover {
   color: #FFFFFF;
   background-color: #CE84DB;
   border: 1px solid #CE84DB;
@@ -244,12 +216,6 @@ body footer span {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
-  .shopContainer {
-    display: grid;
-    grid-template-areas: "mainTitle mainTitle" "box 1 box2";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 7rem 1fr;
-  }
 }
 @media (max-width: 640px) {
   .headerNotIndex {
@@ -257,23 +223,6 @@ body footer span {
     grid-template-areas: "pageIcon" "navNotIndex";
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-  }
-  .shopContainer {
-    grid-template-areas: "mainTitle" "box 1" "box2";
-    grid-template-columns: 1fr;
-    grid-template-rows: 180px 1fr 1fr;
-  }
-  .shopContainer .mainTitle {
-    grid-area: mainTitle;
-    grid-row: 1/2;
-  }
-  .shopContainer .box1 {
-    grid-area: box1;
-    grid-row: 2/3;
-  }
-  .shopContainer .box2 {
-    grid-area: box2;
-    grid-row: 3/4;
   }
 }
 @media (max-width: 566px) {
@@ -283,23 +232,6 @@ body footer span {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
-  .shopContainer {
-    grid-template-areas: "mainTitle" "box 1" "box2";
-    grid-template-columns: 1fr;
-    grid-template-rows: 180px 1fr 1fr;
-  }
-  .shopContainer .mainTitle {
-    grid-area: mainTitle;
-    grid-row: 1/2;
-  }
-  .shopContainer .box1 {
-    grid-area: box1;
-    grid-row: 2/3;
-  }
-  .shopContainer .box2 {
-    grid-area: box2;
-    grid-row: 3/4;
-  }
 }
 @media (max-width: 480px) {
   .headerNotIndex {
@@ -308,23 +240,6 @@ body footer span {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
-  .shopContainer {
-    grid-template-areas: "mainTitle" "box 1" "box2";
-    grid-template-columns: 1fr;
-    grid-template-rows: 180px 1fr 1fr;
-  }
-  .shopContainer .mainTitle {
-    grid-area: mainTitle;
-    grid-row: 1/2;
-  }
-  .shopContainer .box1 {
-    grid-area: box1;
-    grid-row: 2/3;
-  }
-  .shopContainer .box2 {
-    grid-area: box2;
-    grid-row: 3/4;
-  }
 }
 @media (max-width: 320px) {
   .headerNotIndex {
@@ -332,22 +247,5 @@ body footer span {
     grid-template-areas: "pageIcon" "navNotIndex";
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-  }
-  .shopContainer {
-    grid-template-areas: "mainTitle" "box 1" "box2";
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-  }
-  .shopContainer .mainTitle {
-    grid-area: mainTitle;
-    grid-row: 1/2;
-  }
-  .shopContainer .box1 {
-    grid-area: box1;
-    grid-row: 2/3;
-  }
-  .shopContainer .box2 {
-    grid-area: box2;
-    grid-row: 3/4;
   }
 }/*# sourceMappingURL=styles.css.map */
