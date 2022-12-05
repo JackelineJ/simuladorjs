@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "Ghosting Full Game",
+        "price": 30,
+        "img": "ghosting.png"
+    },
+    {
+        "id": 2,
+        "name": "Ghosting's Artbook",
+        "price": 27,
+        "img": "artbook.png"
+    }
+]
