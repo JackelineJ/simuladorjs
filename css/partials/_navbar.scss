@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap');
+
 .nav{
     max-width: 1200px;
-    display: inline-block;
-    border: 2px solid $borderColor;
-    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 2rem;
     margin: 1rem;
     li {
+        display: inline;
         padding: 1rem;
+        margin: 1rem;
+        align-items: center;
         text-align: center;
         cursor: pointer;
         transition: 0.5s;
@@ -18,7 +22,7 @@
             color: $textColor;
             font-family: 'Quantico', sans-serif;
             font-weight: 800;
-            font-size: 3rem;
+            font-size: 2rem;
         }
     }
 }
