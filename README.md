@@ -1,5 +1,5 @@
 # GHOSTING
 
-    Ghosting is a game project. The story starts with our hero, who moves to a new place only to find out that their life might be different from now  on. Inspired by visual novels, you will have to choose from one option or another, and depending on the answer the outcome will be different.
+    Ghosting is a game project. The story starts with our hero, who moves to a new place only to find out that their life might be different from now  on. The page was created as an official site in which you can purchase the game "Ghosting" and, if you want, the merchandise that comes with it.
 
-    The game is made with HTML, CSS and JavaScript.
+    The website is made with HTML, CSS and JavaScript.

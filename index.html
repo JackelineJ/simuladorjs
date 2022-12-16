@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Juego interactivo">
     <meta name="keywords" content="juego interactivo, juego de rol, fantasmas">
-    <!------icono de la pestaña---->
-    <!----bootstrap de ser necesario---->
+    <link rel="shortcut icon" href="./assets/menuimg/ghost.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap" rel="stylesheet">
@@ -19,14 +18,13 @@
 <body>
     <header>
         <div class="head">
-            <a href="#">
-                <img src="./assets/menuimg/ghost.png" alt="ghost">
+            <a href="./index.html">
+                <img src="./assets/logo1.png" alt="ghost">
             </a>
         </div>
         <div class="nav">
             <ul>
                 <li><a href="index.html">Title</a></li>
-                <li><a href="./pages/game.html">New game</a></li>
                 <li><a href="./pages/gallery.html">Gallery</a></li>
                 <li><a href="./pages/shop.html">Shop</a></li>
                 <li><a href="./pages/credits.html">Credits</a></li>
@@ -34,26 +32,18 @@
         </div>
     </header>
     <main>
-        <div class="indexQuestion" id="trigger">
-            <h1>Wait...Is that a ghost?!</h1>
-        </div>
         <section class="animation">
-            <img class="menu" src="./assets/indeximg/cielo.png" id="sky" alt="blue sky">
-            <img class="menu" src="./assets/indeximg/bosque.png" id="woods" alt="forest with green trees">
-            <img class="menu" src="./assets/indeximg/casa.png" id="house" alt="cottage">
-            <img class="menu" src="./assets/indeximg/cerca.png" id="fence" alt="fence">
-            <img class="menu" src="./assets/indeximg/personajes.png" id="characters"
-                alt="the main character is laying down under a tree and cats are playing in the background">
-            <img class="menu" src="./assets/indeximg/titulo.png" id="title" alt="ghosting">
+            <img class="cover" src="./assets/galleryimg/galeria1.png"
+                alt="protagonist resting on the grass while his two cats play">
+        </section>
+        <section class="summary">
+            <p>The story starts with our hero, who moves to a new place only to find out that their life might be
+                different from now on.</p>
         </section>
     </main>
     <footer>
         <span>&copy; 2022 by me</span>
     </footer>
-
-    <!---link de bootstrap java de ser necesario---->
-    <!---codigos javascript---->
-    <script src="./index.js"></script>
 </body>
 
 </html>

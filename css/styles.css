@@ -20,13 +20,17 @@ img {
 }
 
 .nav {
-  max-width: 400px;
-  border: 2px solid #CE84DB;
-  border-radius: 1rem;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  border-radius: 2rem;
   margin: 1rem;
 }
 .nav li {
+  display: inline;
   padding: 1rem;
+  margin: 1rem;
+  align-items: center;
   text-align: center;
   cursor: pointer;
   transition: 0.5s;
@@ -38,8 +42,8 @@ img {
 .nav li a {
   color: #FFFFFF;
   font-family: "Quantico", sans-serif;
-  font-weight: 700;
-  font-size: 3rem;
+  font-weight: 800;
+  font-size: 2rem;
 }
 
 body {
@@ -53,21 +57,13 @@ body header .head {
   text-align: center;
   justify-content: center;
   padding-top: 5rem;
-  /*borrar si no funciona*/
 }
 body header .head img {
   margin: auto;
-  width: 7rem;
-}
-body header .head #trigger {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 30rem;
 }
 body main {
   padding: 5rem;
-  /*borrar si no funciona*/
 }
 body main .indexQuestion {
   color: #FFFFFF;
@@ -76,27 +72,14 @@ body main .indexQuestion {
   justify-content: center;
   text-align: center;
 }
-body main .animation {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  overflow: hidden;
-}
-body main .animation .menu {
-  position: absolute;
+body main .cover {
+  max-width: 1200px;
   border-radius: 1rem;
-  top: 0;
-  left: 0;
-  pointer-events: none;
 }
-body main .animation .menu #sky {
-  bottom: 0;
-  top: initial;
-}
-body main .animation .menu #woods {
-  bottom: 0;
-  top: initial;
-  z-index: 1000;
+body main .summary {
+  background-color: #FFFFFF;
+  padding: 2rem;
+  border-radius: 1rem;
 }
 body footer {
   display: flex;
@@ -125,12 +108,13 @@ body footer span {
   grid-area: navNotIndex;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .headerNotIndex .navNotIndex li {
   display: inline;
   padding: 2rem;
   font-size: 1.2rem;
+  font-weight: 800;
 }
 .headerNotIndex .navNotIndex a {
   color: #FFFFFF;
@@ -164,61 +148,43 @@ body footer span {
   padding: 0 1rem 1rem 0;
 }
 
-.shopContainer {
+.container {
   max-width: 1200px;
   background-color: #FFFFFF;
   border-radius: 2rem;
-  display: grid;
-  grid-template-areas: "mainTitle mainTitle" "box 1 box2";
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 7rem 1fr;
 }
-.shopContainer .mainTitle {
-  grid-area: mainTitle;
-  grid-column: 1/3;
-  grid-row: 1/2;
-  font-size: 4rem;
-  padding-top: 2rem;
-  text-align: center;
-  color: #020202;
+.container h1 {
+  margin: 1rem;
+  padding: 1rem;
 }
-.shopContainer .box .box1 {
-  grid-area: box1;
-}
-.shopContainer .box .box1 .gameArtbook {
-  width: 50%;
-}
-.shopContainer .box .box2 {
-  grid-area: box2;
-}
-.shopContainer .box .box2 .ghostingGame {
-  width: 50%;
-}
-.shopContainer .box h2 {
+.container h2 {
   text-align: center;
   margin-bottom: 1rem;
 }
-.shopContainer .box .price {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.container .containerStyle {
+  padding: 1rem;
 }
-.shopContainer .box .button {
-  display: flex;
-  justify-content: center;
+.container .cardStyle {
+  border-radius: 1rem;
 }
-.shopContainer .box .button .shoppingButton {
+.container .shoppingButton {
   font-family: "Quantico", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-align: center;
   margin-bottom: 2rem;
-  color: #FFFFFF;
+  color: #020202;
   background-color: #4BD663;
   border: 1px solid #4BD663;
-  width: 10rem;
+  width: 7rem;
   height: 3rem;
   border-radius: 1rem;
   cursor: pointer;
+}
+.container .shoppingButton:hover {
+  color: #FFFFFF;
+  background-color: #CE84DB;
+  border: 1px solid #CE84DB;
+  transition: 0.5s;
 }
 
 .creditContainer {
@@ -230,6 +196,9 @@ body footer span {
 .creditContainer h1 {
   font-size: 4rem;
 }
+.creditContainer .creditText {
+  padding: 10rem;
+}
 
 @media (max-width: 768px) {
   .headerNotIndex {
@@ -237,12 +206,6 @@ body footer span {
     grid-template-areas: "pageIcon" "navNotIndex";
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-  }
-  .shopContainer {
-    display: grid;
-    grid-template-areas: "mainTitle mainTitle" "box 1 box2";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 7rem 1fr;
   }
 }
 @media (max-width: 640px) {
@@ -252,23 +215,6 @@ body footer span {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
-  .shopContainer {
-    grid-template-areas: "mainTitle" "box 1" "box2";
-    grid-template-columns: 1fr;
-    grid-template-rows: 180px 1fr 1fr;
-  }
-  .shopContainer .mainTitle {
-    grid-area: mainTitle;
-    grid-row: 1/2;
-  }
-  .shopContainer .box1 {
-    grid-area: box1;
-    grid-row: 2/3;
-  }
-  .shopContainer .box2 {
-    grid-area: box2;
-    grid-row: 3/4;
-  }
 }
 @media (max-width: 566px) {
   .headerNotIndex {
@@ -276,23 +222,6 @@ body footer span {
     grid-template-areas: "pageIcon" "navNotIndex";
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-  }
-  .shopContainer {
-    grid-template-areas: "mainTitle" "box 1" "box2";
-    grid-template-columns: 1fr;
-    grid-template-rows: 180px 1fr 1fr;
-  }
-  .shopContainer .mainTitle {
-    grid-area: mainTitle;
-    grid-row: 1/2;
-  }
-  .shopContainer .box1 {
-    grid-area: box1;
-    grid-row: 2/3;
-  }
-  .shopContainer .box2 {
-    grid-area: box2;
-    grid-row: 3/4;
   }
 }
 @media (max-width: 480px) {
@@ -302,23 +231,6 @@ body footer span {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
-  .shopContainer {
-    grid-template-areas: "mainTitle" "box 1" "box2";
-    grid-template-columns: 1fr;
-    grid-template-rows: 180px 1fr 1fr;
-  }
-  .shopContainer .mainTitle {
-    grid-area: mainTitle;
-    grid-row: 1/2;
-  }
-  .shopContainer .box1 {
-    grid-area: box1;
-    grid-row: 2/3;
-  }
-  .shopContainer .box2 {
-    grid-area: box2;
-    grid-row: 3/4;
-  }
 }
 @media (max-width: 320px) {
   .headerNotIndex {
@@ -326,22 +238,5 @@ body footer span {
     grid-template-areas: "pageIcon" "navNotIndex";
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-  }
-  .shopContainer {
-    grid-template-areas: "mainTitle" "box 1" "box2";
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-  }
-  .shopContainer .mainTitle {
-    grid-area: mainTitle;
-    grid-row: 1/2;
-  }
-  .shopContainer .box1 {
-    grid-area: box1;
-    grid-row: 2/3;
-  }
-  .shopContainer .box2 {
-    grid-area: box2;
-    grid-row: 3/4;
   }
 }/*# sourceMappingURL=styles.css.map */
