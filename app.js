@@ -1,12 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
     fetchData()
+    if (localStorage.getItem('shoppingCart')) {
+        shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'))
+        theKart()
+    }
 })
 
 const fetchData = async () => {
     try {
         const res = await fetch('../api.json')
         const data = await res.json()
-        // console.log(data)
         ghostingProducts(data)
         theButtons(data)
     } catch (error) {
@@ -14,38 +17,36 @@ const fetchData = async () => {
     }
 }
 
-const contendorProductos = document.querySelector('#contenedor-productos')
+const productContainer = document.querySelector('#container-product')
+
 const ghostingProducts = (data) => {
-    const template = document.querySelector('#template-productos').content
+    const template = document.querySelector('#template-product').content
     const fragment = document.createDocumentFragment()
-    // console.log(template)
-    data.forEach(producto => {
-        // console.log(producto)
-        template.querySelector('img').setAttribute('src', producto.thumbnailUrl)
-        template.querySelector('h5').textContent = producto.title
-        template.querySelector('p span').textContent = producto.precio
-        template.querySelector('button').dataset.id = producto.id
+
+    data.forEach(product => {
+        template.querySelector('img').setAttribute('src', product.thumbnailUrl)
+        template.querySelector('h5').textContent = product.title
+        template.querySelector('p span').textContent = product.price
+        template.querySelector('button').dataset.id = product.id
         const clone = template.cloneNode(true)
         fragment.appendChild(clone)
     })
-    contendorProductos.appendChild(fragment)
+    productContainer.appendChild(fragment)
 }
 
-let carrito = {}
+let shoppingCart = {}
 
 const theButtons = (data) => {
-    const botones = document.querySelectorAll('.card button')
+    const buttonProduct = document.querySelectorAll('.card button')
 
-    botones.forEach(btn => {
+    buttonProduct.forEach(btn => {
         btn.addEventListener('click', () => {
-            // console.log(btn.dataset.id)
-            const producto = data.find(item => item.id === parseInt(btn.dataset.id))
-            producto.cantidad = 1
-            if (carrito.hasOwnProperty(producto.id)) {
-                producto.cantidad = carrito[producto.id].cantidad + 1
+            const product = data.find(item => item.id === parseInt(btn.dataset.id))
+            product.amount = 1
+            if (shoppingCart.hasOwnProperty(product.id)) {
+                product.amount = shoppingCart[product.id].amount + 1
             }
-            carrito[producto.id] = { ...producto }
-            // console.log('carrito', carrito)
+            shoppingCart[product.id] = { ...product }
             theKart()
         })
     })
@@ -55,22 +56,19 @@ const items = document.querySelector('#items')
 
 const theKart = () => {
 
-    //pendiente innerHTML
     items.innerHTML = ''
 
-    const template = document.querySelector('#template-carrito').content
+    const template = document.querySelector('#template-shopcart').content
     const fragment = document.createDocumentFragment()
 
-    Object.values(carrito).forEach(producto => {
-        // console.log('producto', producto)
-        template.querySelector('th').textContent = producto.id
-        template.querySelectorAll('td')[0].textContent = producto.title
-        template.querySelectorAll('td')[1].textContent = producto.cantidad
-        template.querySelector('span').textContent = producto.precio * producto.cantidad
+    Object.values(shoppingCart).forEach(product => {
+        template.querySelector('th').textContent = product.id
+        template.querySelectorAll('td')[0].textContent = product.title
+        template.querySelectorAll('td')[1].textContent = product.amount
+        template.querySelector('span').textContent = product.price * product.amount
         
-        //botones
-        template.querySelector('.btn-info').dataset.id = producto.id
-        template.querySelector('.btn-danger').dataset.id = producto.id
+        template.querySelector('.btn-success').dataset.id = product.id
+        template.querySelector('.btn-dark').dataset.id = product.id
 
         const clone = template.cloneNode(true)
         fragment.appendChild(clone)
@@ -81,14 +79,15 @@ const theKart = () => {
     theFooter()
     ActionButton()
 
+    localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
 }
 
-const footer = document.querySelector('#footer-carrito')
+const footer = document.querySelector('#footer-cart')
 const theFooter = () => {
 
     footer.innerHTML = ''
 
-    if (Object.keys(carrito).length === 0) {
+    if (Object.keys(shoppingCart).length === 0) {
         footer.innerHTML = `
         <th scope="row" colspan="5">Your cart is empty</th>
         `
@@ -98,13 +97,11 @@ const theFooter = () => {
     const template = document.querySelector('#template-footer').content
     const fragment = document.createDocumentFragment()
 
-    // sumar cantidad y sumar totales
-    const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
-    const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
-    // console.log(nPrecio)
+    const amountProduct = Object.values(shoppingCart).reduce((acc, { amount }) => acc + amount, 0)
+    const amountWithPrice = Object.values(shoppingCart).reduce((acc, {amount, price}) => acc + amount * price ,0)
 
-    template.querySelectorAll('td')[0].textContent = nCantidad
-    template.querySelector('span').textContent = nPrecio
+    template.querySelectorAll('td')[0].textContent = amountProduct
+    template.querySelector('span').textContent = amountWithPrice
 
     const clone = template.cloneNode(true)
     fragment.appendChild(clone)
@@ -112,42 +109,45 @@ const theFooter = () => {
     footer.appendChild(fragment)
 
 
-    const boton = document.querySelector('#vaciar-carrito')
-    boton.addEventListener('click', () => {
-        carrito = {}
+    const emptyButton = document.querySelector('#empty-cart')
+    emptyButton.addEventListener('click', () => {
+        shoppingCart = {}
         theKart()
     })
 
+    const purchaseButton = document.querySelector('#purchase')
+    purchaseButton.addEventListener('click', () => {
+        Swal.fire(
+            'Purchase completed',
+            'Thanks for supporting "GHOSTING"!',
+            'success'
+        )
+    })
 }
 
 const ActionButton = () => {
-    const botonesAgregar = document.querySelectorAll('#items .btn-info')
-    const botonesEliminar = document.querySelectorAll('#items .btn-danger')
+    const addButton = document.querySelectorAll('#items .btn-success')
+    const deleteButton = document.querySelectorAll('#items .btn-dark')
 
-    // console.log(botonesAgregar)
-
-    botonesAgregar.forEach(btn => {
+    addButton.forEach(btn => {
         btn.addEventListener('click', () => {
-            // console.log(btn.dataset.id)
-            const producto = carrito[btn.dataset.id]
-            producto.cantidad ++
-            carrito[btn.dataset.id] = { ...producto }
+            const product = shoppingCart[btn.dataset.id]
+            product.amount ++
+            shoppingCart[btn.dataset.id] = { ...product }
             theKart()
         })
     })
 
-    botonesEliminar.forEach(btn => {
+    deleteButton.forEach(btn => {
         btn.addEventListener('click', () => {
-            // console.log('eliminando...')
-            const producto = carrito[btn.dataset.id]
-            producto.cantidad--
-            if (producto.cantidad === 0) {
-                delete carrito[btn.dataset.id]
+            const product = shoppingCart[btn.dataset.id]
+            product.amount--
+            if (product.amount === 0) {
+                delete shoppingCart[btn.dataset.id]
             } else {
-                carrito[btn.dataset.id] = { ...producto }
+                shoppingCart[btn.dataset.id] = { ...product }
             }
             theKart()
         })
     })
 }
-
