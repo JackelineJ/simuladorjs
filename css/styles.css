@@ -64,7 +64,6 @@ body header .head img {
 }
 body main {
   padding: 5rem;
-  /*borrar si no funciona*/
 }
 body main .indexQuestion {
   color: #FFFFFF;
@@ -73,27 +72,9 @@ body main .indexQuestion {
   justify-content: center;
   text-align: center;
 }
-body main .animation {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  overflow: hidden;
-}
-body main .animation .menu {
-  position: absolute;
+body main .cover {
+  max-width: 1200px;
   border-radius: 1rem;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-}
-body main .animation .menu #sky {
-  bottom: 0;
-  top: initial;
-}
-body main .animation .menu #woods {
-  bottom: 0;
-  top: initial;
-  z-index: 1000;
 }
 body main .summary {
   background-color: #FFFFFF;
