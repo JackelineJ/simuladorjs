@@ -2,25 +2,29 @@
     max-width: 1200px;
     background-color: $textColor;
     border-radius: 2rem;
-    .mainTitle {
-        font-size: 4rem;
-        padding-top: 2rem;
-        text-align: center;
-        color: $multiuseColor;
+    h1 {
+        margin: 1rem;
+        padding: 1rem;
     }
     h2{
         text-align: center;
         margin-bottom: 1rem;
     }
+    .containerStyle {
+        padding: 1rem;
+    }
+    .cardStyle {
+        border-radius: 1rem;
+    }
     .shoppingButton {
         font-family: 'Quantico', sans-serif;
-        font-size: 1.5rem;
+        font-size: 1rem;
         text-align: center;
         margin-bottom: 2rem;
         color: $multiuseColor;
         background-color: $backgroundColor;
         border: 1px solid $backgroundColor;
-        width: 10rem;
+        width: 7rem;
         height: 3rem;
         border-radius: 1rem;
         cursor: pointer;
